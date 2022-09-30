@@ -1,0 +1,16 @@
+services:
+  traefik:
+    volumes:
+      - ./docker/traefik:C:/etc/traefik
+  mssql:
+    hostname: mssql
+    volumes:
+      - type: bind
+        source: .\docker\data\mssql
+        target: c:\data
+  solr:
+    hostname: solr
+    volumes:
+      - type: bind
+        source: .\docker\data\solr
+        target: c:\data

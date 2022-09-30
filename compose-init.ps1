@@ -47,7 +47,7 @@ Param (
     $SitecoreGalleryRepositoryLocation = "https://sitecore.myget.org/F/sc-powershell/api/v2",
     
     [string]
-    $CertDataFolder = ".\traefik\certs",
+    $CertDataFolder = ".\docker\traefik\certs",
     
     [string]
     $SpecificVersion
@@ -296,5 +296,4 @@ function Invoke-ComposeInit {
     }
 }
 
-$logFilePath = Join-Path -path (Split-Path -Parent $MyInvocation.MyCommand.Path) -ChildPath "compose-init-$(Get-date -f 'yyyyMMddHHmmss').log";
-Invoke-ComposeInit *>&1 | Tee-Object $logFilePath
+Invoke-ComposeInit *>&1
